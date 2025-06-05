@@ -1,69 +1,68 @@
-using BuyList.Data;
+using BuyList.Services;
 using BuyList.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using BuyList.Dtos;
+
+using Microsoft.AspNetCore.Authorization;
+
+
 namespace BuyList.Controllers;
 
+
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class ItemController : ControllerBase
 {
-    private readonly BuyListContext _context;
+    private readonly ItemService _itemService;
 
-    public ItemController(BuyListContext context)
+    public ItemController(ItemService itemService)
     {
 
-        _context = context;
+        _itemService = itemService;
     }
 
-
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Item>>> GetItems() =>
-
-        await _context.Items.ToListAsync();
+    public async Task<ActionResult<IEnumerable<Item>>> GetItems()
+    {
+        
+        return  await _itemService.GetOpenItemsAsync();
+        
+    }
+        
+       
 
     [HttpGet("{id}")]
     public async Task<ActionResult<Item>> GetItem(int id)
     {
-        var item = await _context.Items.FindAsync(id);
-        if (item == null)
-            return NotFound();
+        var item = await _itemService.GetItemAsync(id);
+        if (item == null) return NotFound();
         return item;
-
     }
+
 
     [HttpPatch("{id}")]
     public async Task<ActionResult> PatchItem(int id, [FromBody] ItemPatchDto update)
     {
-        var item = await _context.Items.FindAsync(id);
-        if(item == null)
+        var updated = await _itemService.PatchItemDoneStateAsync(id, update.Done);
+        if (updated == null)
             return NotFound();
-       
-        item.Done = update.Done;
-        
-        await _context.SaveChangesAsync();
-        
-        return Ok(item);
+
+        return Ok(updated);
     }
 
     [HttpPost]
     public async Task<ActionResult<Item>> PostItem(Item item)
     {
-        _context.Items.Add(item);
-        await _context.SaveChangesAsync();
-        return CreatedAtAction(nameof(GetItem), new { id = item.Id }, item);
+        var created = await _itemService.AddItemAsync(item);
+        return CreatedAtAction(nameof(GetItem), new { id = created.Id }, created);
+       
     }
 
     [HttpDelete("{id}")]
     public async Task<ActionResult<Item>> DeleteItem(int id)
     {
-        var item = await _context.Items.FindAsync();
-        if(item == null)
-            return NotFound();
-        
-        _context.Items.Remove(item);
-        await _context.SaveChangesAsync();
-        return NoContent();
+       var success = await _itemService.DeleteItemAsync(id);
+       return success ? NoContent() : NotFound();
     }
 }

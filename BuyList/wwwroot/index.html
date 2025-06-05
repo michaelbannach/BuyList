@@ -1,24 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <link rel="stylesheet" href="css/site.css">
     <meta charset="UTF-8">
     <title>BuyList</title>
+    <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
 
 <div class="app-container">
     <div class="header">
-<h2>BuyList</h2>
+        <h2>BuyList</h2>
 
-<input id="itemInput" text="text" placeholder="Artikel">
-<input id="amountInput" text="text" placeholder="Menge">
-
-<button id="add">Hinzufügen</button>
+        <input id="itemInput" type="text" placeholder="Artikel">
+        <input id="amountInput" type="text" placeholder="Menge">
+        <button id="add" class="primary-btn">Hinzufügen</button>
     </div>
-<ul id="list" class="buylist"></ul>
 
+    <ul id="list" class="buylist"></ul>
+
+    <div class="footer">
+        <div class="button-row">
+            <a href="purchases.html" class="primary-btn link-button">Übersicht Einkäufe</a>
+            <button id="purchase" class="primary-btn">Einkauf abschließen</button>
+        </div>
+
+
+        <div id="priceInputSection" style="display: none; margin-top: 10px;">
+            <input type="text" id="priceInput" placeholder="Betrag (€)">
+            <button id="confirmPurchase">Absenden</button>
+        </div>
+    </div>
 </div>
+
+
 <script src="js/site.js"></script>
 </body>
 </html>

@@ -1,17 +1,25 @@
 body {
-  font-family: Calibri, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
   margin: 0;
   padding: 0;
 }
 
 .app-container {
-  width: 90%;
   max-width: 800px;
   margin: 40px auto;
-  border: 5px solid #0b4084;
-  padding: 10px;
-  background-color: white;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 2px solid #14457b;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #14457b;
+  margin-bottom: 20px;
 }
 
 .header {
@@ -28,30 +36,58 @@ body {
   font-size: 1rem;
 }
 
-.header button {
-  padding: 10px 20px;
+input[type="text"],
+select {
+  padding: 10px;
   font-size: 1rem;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 200px;
+  background-color: white;
+}
+
+/* Buttons */
+button,
+.link-button {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.primary-btn,
+.btn.primary,
+.link-button {
   background-color: #0b4084;
   color: white;
-  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
 }
 
-.header button:hover {
-  background-color: #2980b9;
+.primary-btn:hover,
+.btn.primary:hover,
+.link-button:hover {
+  background-color: #1252a3;
 }
 
-.buylist {
+ul.buylist {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.buylist li {
+ul.buylist li {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
-  border-bottom: 1px solid #ccc;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #cce7f7;
 }
 
 .buylist li:nth-child(even) {
@@ -80,14 +116,103 @@ body {
   padding: 6px 12px;
   width: 90px;
   text-align: center;
-  
-  border: none;
   background-color: #ddd;
-  cursor: pointer;
+  border: none;
   border-radius: 4px;
   transition: background-color 0.2s ease;
 }
 
 .buylist button:hover {
   background-color: #ccc;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.login-status {
+  width: 90%;
+  max-width: 800px;
+  margin: 10px auto 0 auto;
+  text-align: right;
+  color: #0b4084;
+  font-size: 1rem;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Sortier-Select */
+#sortSelect {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: white;
+  font-size: 1rem;
+}
+
+/* Einkaufseintrag Design */
+.purchase-entry {
+  background-color: #eef5fc;
+  border-left: 4px solid #14457b;
+  border-radius: 4px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* Responsive Verhalten */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .header input,
+  .primary-btn,
+  .link-button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .footer .primary-btn,
+  .footer .link-button {
+    width: 100%;
+  }
+}
+.purchase-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.purchase-table th,
+.purchase-table td {
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.purchase-table th {
+  background-color: #14457b;
+  color: white;
+}
+
+.purchase-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.purchase-table tr:hover {
+  background-color: #f1f1f1;
 }

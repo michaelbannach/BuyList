@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Einkaufsübersicht</title>
+    <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<div class="app-container">
+    <h2>Getätigte Einkäufe</h2>
+
+    <label for="sortSelect">Sortieren nach:</label>
+    <select id="sortSelect">
+        <option value="date-desc">Datum (neu zuerst)</option>
+        <option value="date-asc">Datum (alt zuerst)</option>
+        <option value="price-desc">Betrag (hoch zuerst)</option>
+        <option value="price-asc">Betrag (niedrig zuerst)</option>
+    </select>
+
+    <table class="purchase-table">
+        <thead>
+        <tr>
+            <th>Datum</th>
+            <th>Benutzer</th>
+            <th>Betrag</th>
+        </tr>
+        </thead>
+        <tbody id="purchaseList">
+        <!-- Einträge werden durch JS ergänzt -->
+        </tbody>
+    </table>
+
+    <div class="footer">
+        <a class="link-button" href="/">Zurück zur Einkaufsliste</a>
+    </div>
+</div>
+
+<script src="js/purchase.js"></script>
+</body>
+</html>
