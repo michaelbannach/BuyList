@@ -15,7 +15,7 @@ builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
     .AddNegotiate();
 
 builder.Services.AddAuthorization();
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllers();
 
 
 builder.Services.AddScoped<ItemService>();

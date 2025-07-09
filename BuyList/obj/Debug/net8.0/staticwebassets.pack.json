@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\micha\\RiderProjects\\BuyList\\BuyList\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BuyList.bundle.scp.css",
-      "PackagePath": "staticwebassets\\BuyList.bundle.scp.css"
-    },
-    {
       "Id": "C:\\Users\\micha\\RiderProjects\\BuyList\\BuyList\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

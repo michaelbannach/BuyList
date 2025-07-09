@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BuyList.Migrations
 {
     [DbContext(typeof(BuyListContext))]
-    [Migration("20250602143806_CreatePurchaseDto")]
-    partial class CreatePurchaseDto
+    [Migration("20250709172551_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
