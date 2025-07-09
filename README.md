@@ -35,9 +35,12 @@ Ideal für WG-Einkäufe, Familien, gemeinsame Haushalte oder einfache Bedarfspla
 ## Screenshots
 
 ### Einkaufsliste
-![Einkaufsliste Screenshot](BuyList/wwwroot/img/Übersicht_Einkaufen.png)
 ![Einkaufsliste Screenshot](BuyList/wwwroot/img/Übersicht_Einkaufen2.png)
+
+![Einkaufsliste Screenshot](BuyList/wwwroot/img/Übersicht_Einkaufen.png)
+
 ![Einkaufsliste Screenshot](BuyList/wwwroot/img/Übersicht_NachEinkauf.png)
+
 ![Einkaufsliste_Screenshot](BuyList/wwwroot/img/Sortieren_Detail.PNG)
 
 
