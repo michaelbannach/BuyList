@@ -44,3 +44,15 @@ Ideal für WG-Einkäufe, Familien, gemeinsame Haushalte oder einfache Bedarfspla
 ![Einkaufsliste_Screenshot](BuyList/wwwroot/img/Sortieren_Detail.PNG)
 
 
+
+
+## Weiterentwicklungsideen
+
+- Benutzer können einem Haushalt beitreten oder einen eigenen erstellen
+- Gemeinsame Einkauflisten pro Haushalt
+- Trennung privater und gemeinschaftlicher Daten
+- Kosten-Auswertung
+- Wer hat was bezahlt?
+- Berechnung des aktuellen Schuldenstands innerhalb des Haushalts
+
+    
